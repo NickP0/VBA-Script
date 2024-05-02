@@ -1,14 +1,11 @@
-# This procedure will enable a pop up everytime the workbook is opened
+'This procedure will enable a pop up everytime the workbook is opened
 Private Sub Workbook_Open()
     MsgBox prompt:="Welcome to " & ActiveWorkbook.Name, Buttons:=vbExclamation
-    'MsgBox prompt:="You are currently in " & ActiveWorkbook.Path, Buttons:=vbCritical
-    'MsgBox prompt:="This Dashboard was last accessed on " & ActiveWorkbook.DateLastAccessed
-    'ActiveWorkbook isn't the right object..
-    MsgBox prompt:="Please do not amend any values within this Dashboard", Buttons:=vbExclamation
+    MsgBox prompt:="Please do not amend any values within this Dashboard", Buttons:=vbExclamation 'Change as needed
     MsgBox prompt:="If you encounter any issues, reach out to Nick", Buttons:=vbExclamation
 End Sub
 
-# This procedure will detect any changes made on the pivot tables datasource and amend the pivot table accordingly
+'This procedure will detect any changes made on the pivot tables datasource and amend the pivot table accordingly
 Private Sub Workbook_SheetChange(ByVal sh As Object, ByVal target As Range)
     Dim pt As PivotTable
     Dim ptrange As Range
@@ -21,17 +18,17 @@ Application.ScreenUpdating = False
 
     On Error Resume Next
     ' Pivot Table Object
-    Set pt = Worksheets("Dashboard").PivotTables("PivotTable5")
+    Set pt = Worksheets("").PivotTables("")
     
     ' Pivot Table Data Source
-    'Set ptrange = pt.SourceData:="RawRamp"
-    Set ptrange = Worksheets(# INSERT WORKSHEET HERE #).Range("<INSERT DATATABLE NAME HERE>")
+    'Set ptrange = pt.SourceData:=""
+    Set ptrange = Worksheets(# INSERT WORKSHEET HERE #).Range("")
     
     
     Set irange = Intersect(ptrange, target)
     
     If ptrange Is Nothing Then
-        MsgBox "PivotTable data source is not valid!", vbExclamation
+        MsgBox "", vbExclamation
         Exit Sub
     End If
     
