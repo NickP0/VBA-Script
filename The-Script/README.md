@@ -1,0 +1,2 @@
+- `Module1` and `Module2` will need to be assigned as their own Macros and can be executed by implementing a button.
+- `Module3` is **deprecated** but can be used as a Macro and be executed with a button - the procedure written in ThisWorkbook has better functionality.
