@@ -1,6 +1,5 @@
 'Run subtotals across worksheets 
-'Will need to change GroupBy:=
-'
+
 
 Sub RunAllSubtotals()
     Dim sheetNames As Variant
