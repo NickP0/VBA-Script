@@ -9,9 +9,8 @@ Public Sub Import()
     targetWorksheets = Array("", "", "", "", "", "raw") 'Amend as needed
 
     
-    ' Use GetOpenFilename method to prompt for file selection
+    'Use GetOpenFilename method to prompt for file selection
     OpenFiles = Application.GetOpenFilename(Title:="Select File(s) to Import", MultiSelect:=False) 'Change MultiSelect:=True if needed
-    ' MultiSelect set to false as should be importing 1 Ramp csv file
 
     Application.ScreenUpdating = False
     
